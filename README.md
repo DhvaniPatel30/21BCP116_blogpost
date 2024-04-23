@@ -49,17 +49,17 @@ In this part of the tutorial, we will set up the database tier using MongoDB.
 FROM mongo:latest
 
 # Set container name with roll number
-ENV MONGO_CONTAINER_NAME="mongodb-21BCP107"
+ENV MONGO_CONTAINER_NAME="mongodb-21BCP116"
 ```
 
 ## Step 2: building and running the database
 
 ```dockerfile
 # Build the Docker image for MongoDB
-docker build -t mongodb-21BCP107 .
+docker build -t mongodb-21BCP116 .
 
 # Run the MongoDB container
-docker run -d --name mongodb-21BCP107 -p 27017:27017 mongodb-21BCP107
+docker run -d --name mongodb-21BCP116 -p 27017:27017 mongodb-21BCP116
 
 ```
 
@@ -71,7 +71,7 @@ docker run -d --name mongodb-21BCP107 -p 27017:27017 mongodb-21BCP107
 docker network create my-network
 
 # Connect MongoDB container to the network
-docker network connect my-network mongodb-21BCP107
+docker network connect my-network mongodb-21BCP116
 ```
 
 ![Screenshot 2024-04-23 114000](https://github.com/murlipatel1/blog-three-tier/assets/100035961/207e2745-b8bc-4778-a2b2-2b37bb48047e)
@@ -99,7 +99,7 @@ In this part of the tutorial, we will set up the backend tier using Node.js.
 FROM node:latest
 
 # Set container name with roll number
-ENV NODE_CONTAINER_NAME="nodejs-backend-21BCP107"
+ENV NODE_CONTAINER_NAME="nodejs-backend-21BCP116"
 
 # Create and set working directory
 WORKDIR /app
@@ -125,10 +125,10 @@ CMD ["node", "server.js"]
 
 ``` dockerfile
 # Build the Docker image for Node.js backend
-docker build -t nodejs-backend-21BCP107 .
+docker build -t nodejs-backend-21BCP116 .
 
 # Run the Node.js backend container
-docker run -d --name nodejs-backend-21BCP107 -p 5000:5000 --network my-network nodejs-backend-21BCP107
+docker run -d --name nodejs-backend-21BCP116 -p 5000:5000 --network my-network nodejs-backend-21BCP116
 ```
 ![Screenshot 2024-04-23 114417](https://github.com/murlipatel1/blog-three-tier/assets/100035961/2fa4e26b-cdb9-4c89-bd59-09e3d78cbc71)
 
@@ -153,7 +153,7 @@ In this part of the tutorial, we will set up the frontend tier using React.
 FROM node:latest as build
 
 # Set container name with roll number
-ENV REACT_CONTAINER_NAME="react-frontend-21BCP107"
+ENV REACT_CONTAINER_NAME="react-frontend-21BCP116"
 
 # Create and set working directory
 WORKDIR /app
@@ -187,10 +187,10 @@ CMD ["nginx", "-g", "daemon off;"]
 ## Step 2: Building and Running React Frontend Container
  ``` dockerfile
 # Build the Docker image for React frontend
-docker build -t react-frontend-21BCP107 .
+docker build -t react-frontend-21BCP116 .
 
 # Run the React frontend container
-docker run -d --name react-frontend-21BCP107 -p 80:80 --network my-network react-frontend-21BCP107
+docker run -d --name react-frontend-21BCP116 -p 80:80 --network my-network react-frontend-21BCP116
 ```
 ![Screenshot 2024-04-23 115003](https://github.com/murlipatel1/blog-three-tier/assets/100035961/713bd23e-9b1b-405b-8967-f57e6db5d115)
 
