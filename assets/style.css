@@ -1,0 +1,37 @@
+/* Add your CSS styles here */
+nav{
+
+  background-color: #726565;
+}
+nav ul {
+    /* list-style-type: none; */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  nav li {
+    display: inline;
+    float: left;
+  }
+  
+  nav a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  nav a:hover {
+    background-color: #555;
+  }
+  
+  nav a.active {
+    background-color: #4CAF50;
+  }
+
+  img{
+    width: 80%;
+  }
+  

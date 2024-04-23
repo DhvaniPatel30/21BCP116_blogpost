@@ -1,0 +1,144 @@
+{% assign base_url = "/blog-three-tier/" %}
+<html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <!-- Include your CSS file -->
+  <link rel="stylesheet" href="/blog-three-tier/assets/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    nav {
+      background-color: #333;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    nav ul li a.active {
+      background-color: #4CAF50;
+    }
+
+    .container {
+      margin: 20px auto;
+      max-width: 1200px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-list-heading {
+      margin-top: 0;
+    }
+
+    .post-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .post-link { 
+      text-decoration: none;
+      color: #333;
+    }
+    .post-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      border-radius: 5px;
+    }
+
+    .social-links {
+      margin-bottom: 10px;
+    }
+
+    .social-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+{% include header.html %}
+<div class="container">
+
+  <div class="home">
+    <h1 class="post-list-heading">Blog of Welcome to three tier Application development using docker</h1>
+    <h3 class="post-list-heading">By: Dhvani Patel (21BCP116)</h3>
+    <p>
+      This is a simple guide to building a three-tier application using Docker. <br /><br />
+      The guide is divided into three parts. <br /><br />
+      The first part will cover how to build a database and connect it to the web application(by clicking Part 1 in navbar).<br /><br />
+      The second part will cover how to configure backend services and connect them to the web application and database(by clicking Part 2 in navbar).<br /><br />
+      The third part will cover how to configure the frontend and connect it to the web application, database, and backend services(by clicking Part 3 in navbar).<br /><br />
+    </p>
+
+    <!-- <ul class="post-list">
+      <li>
+         <span class="post-meta">Apr 23, 2024</span> -->
+        <!-- <h3>
+          <a class="post-link" href="https://github.com/murlipatel1/mernstack_todolist">
+            Reference MERN stack todo list github link which was containerized using docker
+          </a>
+        </h3>
+
+      </li>
+    </ul> -->
+
+    <footer>
+      <div class="footer-content">
+        <div class="social-links">
+          <a href="https://github.com/DhvaniPatel3010">GitHub</a>
+          <a href="https://twitter.com/your-twitter-link">Twitter</a>
+        </div>
+        
+      </div>
+    </footer>
+    
+  </div>
+</div>
+
+<div class="container">
+  {{ content }}
+  
+</div>
+
+</body>
+</html>
