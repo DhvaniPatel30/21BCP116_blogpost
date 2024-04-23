@@ -31,11 +31,13 @@ For the backend tier, Docker containers can encapsulate the application logic, i
 In the frontend tier, Docker can be used to package and deploy the presentation layer components such as static web assets, JavaScript frameworks like React or Angular, and web servers like Nginx or Apache. Docker containers enable developers to build and deploy frontend applications with ease, ensuring consistency and reliability.
 
 Folder Structure of project:
-![image](https://github.com/murlipatel1/blog-three-tier/assets/100035961/a770ae0b-5c2e-4f76-92aa-c837ec16550e)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/b354f44c-be02-4dc4-beda-9451909a582a)
+
+
 
 
 Folder structure of jenkyll:
-![image](https://github.com/murlipatel1/blog-three-tier/assets/100035961/baeff0e6-fe2f-42f9-b7df-b421fdfbc842)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/1fcbd2c4-c784-4111-8c8a-1d7c76ea1007)
 
 
 # Part 1 - Setting Up the Database Tier with MongoDB
@@ -49,21 +51,25 @@ In this part of the tutorial, we will set up the database tier using MongoDB.
 FROM mongo:latest
 
 # Set container name with roll number
-ENV MONGO_CONTAINER_NAME="mongodb-21BCP116"
+ENV MONGO_CONTAINER_NAME="21bcp116-mongodb"
 ```
+
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/7aa0593a-96fd-45c5-8904-0be8c752dfbd)
+
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/d77a5e39-ee00-48d3-8ce3-72e3c6161a89)
 
 ## Step 2: building and running the database
 
 ```dockerfile
 # Build the Docker image for MongoDB
-docker build -t mongodb-21BCP116 .
+docker build -t 21bcp116-mongodb .
 
 # Run the MongoDB container
-docker run -d --name mongodb-21BCP116 -p 27017:27017 mongodb-21BCP116
+docker run -d --name 21bcp116-mongodb -p 27017:27017 21bcp116-mongodb
 
 ```
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/1d397149-9509-4e7c-9df6-224ee797cee7)
 
-![Screenshot 2024-04-23 114134](https://github.com/murlipatel1/blog-three-tier/assets/100035961/86fdefaa-08d3-47e3-9579-6d95d05c51f0)
 
 ## Step 3: Connecting MongoDB Container to Network
 ```dockerfile
@@ -71,12 +77,12 @@ docker run -d --name mongodb-21BCP116 -p 27017:27017 mongodb-21BCP116
 docker network create my-network
 
 # Connect MongoDB container to the network
-docker network connect my-network mongodb-21BCP116
+docker network connect my-network 21bcp116-mongodb
 ```
 
-![Screenshot 2024-04-23 114000](https://github.com/murlipatel1/blog-three-tier/assets/100035961/207e2745-b8bc-4778-a2b2-2b37bb48047e)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/c7ddb472-992f-48b9-a11e-61e08fffc6d4)
 
-![Screenshot 2024-04-23 114256](https://github.com/murlipatel1/blog-three-tier/assets/100035961/9c249de6-1ea4-43b6-a95b-f66d4de940ee)
+
 
 
 
@@ -99,7 +105,7 @@ In this part of the tutorial, we will set up the backend tier using Node.js.
 FROM node:latest
 
 # Set container name with roll number
-ENV NODE_CONTAINER_NAME="nodejs-backend-21BCP116"
+ENV NODE_CONTAINER_NAME="21bcp116-backend"
 
 # Create and set working directory
 WORKDIR /app
@@ -120,19 +126,20 @@ EXPOSE 5000
 CMD ["node", "server.js"]
 ```
 
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/90445a05-cd0c-45e3-bcda-7418b683d463)
 
 ## Step 2: Building and Running Node.js Backend Container
 
 ``` dockerfile
 # Build the Docker image for Node.js backend
-docker build -t nodejs-backend-21BCP116 .
+docker build -t 21bcp116-backend .
 
 # Run the Node.js backend container
-docker run -d --name nodejs-backend-21BCP116 -p 5000:5000 --network my-network nodejs-backend-21BCP116
+docker run -d --name 21bcp116-backend -p 5000:5000 --network my-network 21bcp116-backend
 ```
-![Screenshot 2024-04-23 114417](https://github.com/murlipatel1/blog-three-tier/assets/100035961/2fa4e26b-cdb9-4c89-bd59-09e3d78cbc71)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/1f276ede-c67d-4873-aa2e-1d1b39d30303)
 
-![Screenshot 2024-04-23 114557](https://github.com/murlipatel1/blog-three-tier/assets/100035961/3e876d05-6597-4d96-a361-60b3883c01b9)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/29817b7e-ea7f-4cb5-836a-99c2efa989ae)
 
 ---
 layout: part3
@@ -153,7 +160,7 @@ In this part of the tutorial, we will set up the frontend tier using React.
 FROM node:latest as build
 
 # Set container name with roll number
-ENV REACT_CONTAINER_NAME="react-frontend-21BCP116"
+ENV REACT_CONTAINER_NAME="21bcp116-frontend"
 
 # Create and set working directory
 WORKDIR /app
@@ -182,19 +189,19 @@ EXPOSE 80
 # Command to start NGINX
 CMD ["nginx", "-g", "daemon off;"]
 ```
-![Screenshot 2024-04-23 130535](https://github.com/murlipatel1/blog-three-tier/assets/100035961/7caf5baf-50b5-49ed-8ae9-a36e253e8aa0)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/394edb19-b8b8-497e-b523-947099da4409)
 
 ## Step 2: Building and Running React Frontend Container
  ``` dockerfile
 # Build the Docker image for React frontend
-docker build -t react-frontend-21BCP116 .
+docker build -t 21bcp116-frontend .
 
 # Run the React frontend container
-docker run -d --name react-frontend-21BCP116 -p 80:80 --network my-network react-frontend-21BCP116
+docker run -d --name 21bcp116-frontend -p 80:80 --network my-network 21bcp116-frontend
 ```
-![Screenshot 2024-04-23 115003](https://github.com/murlipatel1/blog-three-tier/assets/100035961/713bd23e-9b1b-405b-8967-f57e6db5d115)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/f35f7c53-bd46-46fe-95b2-a7eb77c43434)
 
- ![Screenshot 2024-04-23 115136](https://github.com/murlipatel1/blog-three-tier/assets/100035961/236ee223-bb0a-4875-8c84-ea8f6fdb6b99)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/9a7aed04-5c19-48da-bdbc-7e15cb3c328e)
 
 
 ## Conclusion
