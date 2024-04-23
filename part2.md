@@ -38,7 +38,7 @@ EXPOSE 5000
 CMD ["node", "server.js"]
 ```
 
-![Image](/images/Screenshot 2024-04-23 114417.png)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/90445a05-cd0c-45e3-bcda-7418b683d463)
 
 
 ## Step 2: Building and Running Node.js Backend Container
@@ -50,4 +50,6 @@ docker build -t 21bcp116-backend .
 # Run the Node.js backend container
 docker run -d --name 21bcp116-backend -p 5000:5000 --network my-network 21bcp116-backend
 ```
-![Image](/images/Screenshot 2024-04-23 114557.png)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/1f276ede-c67d-4873-aa2e-1d1b39d30303)
+
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/29817b7e-ea7f-4cb5-836a-99c2efa989ae)
