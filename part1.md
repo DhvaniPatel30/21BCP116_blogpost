@@ -19,8 +19,11 @@ FROM mongo:latest
 # Set container name with roll number
 ENV MONGO_CONTAINER_NAME="21bcp116-mongodb"
 ```
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/7aa0593a-96fd-45c5-8904-0be8c752dfbd)
 
-![Image](/images/Screenshot 2024-04-23 110138.png)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/d77a5e39-ee00-48d3-8ce3-72e3c6161a89)
+
+
 
 ## Step 2: building and running the database
 
@@ -32,7 +35,7 @@ docker build -t 21bcp116-mongodb .
 docker run -d --name 21bcp116-mongodb -p 27017:27017 21bcp116-mongodb
 
 ```
-![Image](/images/Screenshot 2024-04-23 114000.png)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/1d397149-9509-4e7c-9df6-224ee797cee7)
 
 
 
@@ -45,6 +48,4 @@ docker network create my-network
 docker network connect my-network 21bcp116-mongodb
 ```
 
-![Image](/images/Screenshot 2024-04-23 114134.png)
-
-![Image](/images/Screenshot 2024-04-23 114256.png)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/c7ddb472-992f-48b9-a11e-61e08fffc6d4)
