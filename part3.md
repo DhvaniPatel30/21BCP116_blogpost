@@ -46,7 +46,7 @@ EXPOSE 80
 # Command to start NGINX
 CMD ["nginx", "-g", "daemon off;"]
 ```
-![Image](/images/image.png)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/394edb19-b8b8-497e-b523-947099da4409)
 ## Step 2: Building and Running React Frontend Container
  ``` dockerfile
 # Build the Docker image for React frontend
@@ -56,10 +56,10 @@ docker build -t 21bcp116-frontend .
 docker run -d --name 21bcp116-frontend -p 80:80 --network my-network 21bcp116-frontend
 ```
 
-![Image](/images/Screenshot 2024-04-23 115003.png)
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/f35f7c53-bd46-46fe-95b2-a7eb77c43434)
 
+![image](https://github.com/DhvaniPatel30/21BCP116_blogpost/assets/126047632/9a7aed04-5c19-48da-bdbc-7e15cb3c328e)
 
-![Image](/images/Screenshot 2024-04-23 115136.png)
 
 
 ## Thank you for visiting the documentation
